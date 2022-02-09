@@ -1,0 +1,11 @@
+FROM ubuntu:focal
+
+WORKDIR /app
+
+RUN apt update && \
+    apt-get install -y curl vim git build-essential && \
+    DEBIAN_FRONTEND=noninteractive apt install -y software-properties-common && \
+    apt-add-repository -y ppa:ansible/ansible && \
+    apt update && apt install ansible -y 
+
+CMD ["bash"]
