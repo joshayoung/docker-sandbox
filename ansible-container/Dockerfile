@@ -8,4 +8,6 @@ RUN apt update && \
     apt-add-repository -y ppa:ansible/ansible && \
     apt update && apt install ansible -y 
 
+COPY .bash_history /root/
+
 CMD ["bash"]
