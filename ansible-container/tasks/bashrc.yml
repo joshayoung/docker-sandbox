@@ -1,18 +1,23 @@
 - name: Copy Config to bashrcs
   blockinfile:
-    path: ~/.bashrc
+    path: "{{ item.path }}" 
     block: |
       NODE_ENV=development
+
       if [ -f ~/.bash_aliases ]; then
-         source ~/.bash_aliases
+        source ~/.bash_aliases
       fi
       if [ -f ~/.functions ]; then
-         source ~/.functions
+        source ~/.functions
       fi
       if [ -f ~/.terminal_changes ]; then
-         source ~/.terminal_changes
-       fi
-       # TODO: Modify these paths to point to the actual location
-       export PATH="$PATH:$HOME/path/to/scripts"`
-  1    export PATH="$PATH:$HOME/path/to/scripts-local"
+        source ~/.terminal_changes
+      fi
 
+      # TODO: Modify these paths to point to the actual location
+      export PATH="$PATH:$HOME/path/to/scripts"`
+      export PATH="$PATH:$HOME/path/to/scripts-local"
+
+  with_items:
+    - { path: '~/.bashrc' }
+    - { path: '~/.zshrc' }

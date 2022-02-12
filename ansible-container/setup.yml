@@ -7,10 +7,10 @@
       apt:
         update_cache: true
   tasks:
-    - include_tasks: tasks/packages.yml
-    #- include_tasks: tasks/zsh.yml
+    # - include_tasks: tasks/packages.yml
+    - include_tasks: tasks/zsh.yml
     #- include_tasks: tasks/node.yml
       # - include_tasks: tasks/vim.yml
     #- include_tasks: tasks/fzf.yml
-    # - include_tasks: tasks/bashrc.yml
+    - include_tasks: tasks/bashrc.yml
     #- include_tasks: tasks/git.yml
