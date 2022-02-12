@@ -1,17 +1,22 @@
 - name: Install ZSH and Set to Default Shell
   apt: name=zsh
+
 - name: Update Default Shell
   shell: chsh -s `which zsh` root
+
 - name: Install OhMyZSH
   shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+
 - name: Install PowerLevel10K
   ansible.builtin.git:
     repo: 'https://github.com/romkatv/powerlevel10k.git'
     dest: "$HOME/.oh-my-zsh/custom/themes/powerlevel10k"
+
 - name: Set Environmental Variable
   shell: "echo $ZSH_CUSTOM"
   environment:
     ZSH_CUSTOM: "$HOME/.oh-my-zsh/custom"
+
 - name: Update our Theme
   ansible.builtin.replace:
     path: ~/.zshrc

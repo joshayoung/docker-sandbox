@@ -1,10 +1,12 @@
 # https://github.com/nodesource/distributions/blob/master/README.md#debinstall
 - name: Download Newer Node Version
   shell: curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+
 - name: Install Newer Node Version
   apt:
     name: nodejs
     state: present
+
 # You may also need development tools to build native addons
 - name: Install Additional Packages for Node
   apt:
@@ -12,9 +14,12 @@
       - gcc
       - g++
       - make
+
 - name: Install yarn
   shell: curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
+
 - name:
   shell: echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
 - name: Install yarn
   shell: sudo apt-get update && sudo apt-get install yarn

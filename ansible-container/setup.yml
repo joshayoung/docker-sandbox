@@ -18,6 +18,6 @@
     - name: Setup FZF
       include_tasks: tasks/fzf.yml
     - name: Setup Dot Files
-      include_tasks: tasks/bashrc.yml
+      include_tasks: tasks/profiles.yml
     - name: Setup GIT
       include_tasks: tasks/git.yml
