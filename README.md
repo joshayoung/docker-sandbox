@@ -10,3 +10,7 @@
 
 #### Run Ansible Playbook
 * `ansible-playbook setup.yml`
+
+#### Notes:
+* Run Mac in Docker: 
+  * https://github.com/sickcodes/Docker-OSX#initial-setup
