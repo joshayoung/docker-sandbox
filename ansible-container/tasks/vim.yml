@@ -1,0 +1,9 @@
+- name: Add Vim Settings
+  copy: 
+    src: ./configs/.vimrc
+    dest: ~/
+- name: Install Vundle
+  ansible.builtin.git:
+    repo: 'https://github.com/VundleVim/Vundle.vim.git'
+    dest: "$HOME/.vim/bundle/Vundle.vim"
+

@@ -7,4 +7,5 @@
       apt:
         update_cache: true
   tasks:
-    - include_tasks: tasks/zsh.yml
+    #- include_tasks: tasks/zsh.yml
+    - include_tasks: tasks/vim.yml
