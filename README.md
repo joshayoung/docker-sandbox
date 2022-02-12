@@ -7,3 +7,6 @@
 * Build and run with docker-compose
   * `docker-compose build`
   * `docker-compose run --rm sandbox`
+
+#### Run Ansible Playbook
+* `ansible-playbook setup.yml`

@@ -1,0 +1,10 @@
+- hosts: localhost
+  become: true
+  vars:
+    the_user: "{{ ansible_user_id }}"
+  pre_tasks:
+    - name: Update APT
+      apt:
+        update_cache: true
+  tasks:
+    - include_tasks: tasks/zsh.yml
