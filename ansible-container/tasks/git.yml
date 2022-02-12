@@ -3,6 +3,19 @@
   shell: git config --global user.email "youremail@example.com"
 - name: Copy Git Global Ignore File
   shell: git config --global core.excludesfile $HOME/.global_gitignore
+
+- name: Copy .git_aliases file 
+  copy: 
+    src: ./configs/.git_aliases
+    dest: ~/
+
+- name: Modify Git Config File
+  blockinfile:
+    path: "~/.gitconfig"
+    block: |
+      [include]
+        path = $HOME/.git_aliases
+
 - name: Copy Global Git Ignore File 
   copy: 
     src: ./configs/.global_gitignore
