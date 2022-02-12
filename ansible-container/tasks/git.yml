@@ -1,0 +1,9 @@
+- name: Create a Git Config File
+  # Update this email address:
+  shell: git config --global user.email "youremail@example.com"
+- name: Copy Git Global Ignore File
+  shell: git config --global core.excludesfile $HOME/.global_gitignore
+- name: Copy Global Git Ignore File 
+  copy: 
+    src: ./configs/.global_gitignore
+    dest: ~/
