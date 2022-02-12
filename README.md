@@ -14,3 +14,5 @@
 #### Notes:
 * Run Mac in Docker: 
   * https://github.com/sickcodes/Docker-OSX#initial-setup
+* universal-ctags:
+  * Cannot be installed via snap in docker for testing, since snap does not seem work within docker.

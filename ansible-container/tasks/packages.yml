@@ -2,3 +2,9 @@
   apt:
     name: sudo
     state: present
+- name: Install Additional Packages
+  apt:
+    pkg: 
+      - vim
+      - tmux
+      - silversearcher-ag
