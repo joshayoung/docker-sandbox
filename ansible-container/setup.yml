@@ -7,10 +7,17 @@
       apt:
         update_cache: true
   tasks:
-    # - include_tasks: tasks/packages.yml
-    - include_tasks: tasks/zsh.yml
-    #- include_tasks: tasks/node.yml
-      # - include_tasks: tasks/vim.yml
-    #- include_tasks: tasks/fzf.yml
-    - include_tasks: tasks/bashrc.yml
-    #- include_tasks: tasks/git.yml
+    - name: Install Packages
+      include_tasks: tasks/packages.yml
+    - name: Setup ZSH
+      include_tasks: tasks/zsh.yml
+    - name: Setup Node
+      include_tasks: tasks/node.yml
+    - name: Setup VIM
+      include_tasks: tasks/vim.yml
+    - name: Setup FZF
+      include_tasks: tasks/fzf.yml
+    - name: Setup Dot Files
+      include_tasks: tasks/bashrc.yml
+    - name: Setup GIT
+      include_tasks: tasks/git.yml
