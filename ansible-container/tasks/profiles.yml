@@ -15,7 +15,7 @@
       fi
 
       # TODO: Modify these paths to point to the actual location
-      export PATH="$PATH:$HOME/path/to/scripts"`
+      export PATH="$PATH:$HOME/path/to/scripts"
       export PATH="$PATH:$HOME/path/to/scripts-local"
 
   with_items:

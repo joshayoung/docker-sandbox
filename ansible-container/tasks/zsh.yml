@@ -23,5 +23,8 @@
     regexp: 'ZSH_THEME="robbyrussell"'
     replace: 'ZSH_THEME="powerlevel10k/powerlevel10k"'
 
-
-
+- name: Add plugins
+  ansible.builtin.lineinfile:
+    path: ~/.zshrc
+    regexp: '^plugins=\(git\)'
+    line: plugins=(git asdf ruby)

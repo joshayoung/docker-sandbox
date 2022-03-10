@@ -11,8 +11,8 @@
       include_tasks: tasks/packages.yml
     - name: Setup ZSH
       include_tasks: tasks/zsh.yml
-    - name: Setup Node
-      include_tasks: tasks/node.yml
+    - name: Install ASDF
+      include_tasks: tasks/asdf.yml
     - name: Setup VIM
       include_tasks: tasks/vim.yml
     - name: Setup FZF
@@ -21,3 +21,5 @@
       include_tasks: tasks/profiles.yml
     - name: Setup GIT
       include_tasks: tasks/git.yml
+    - name: Add Files
+      include_tasks: tasks/copy_files.yml

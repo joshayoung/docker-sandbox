@@ -1,0 +1,19 @@
+- name: Add Bash Aliases
+  copy: 
+    src: ./configs/.bash_aliases
+    dest: ~/
+
+- name: Add Functions
+  copy: 
+    src: ./configs/.functions
+    dest: ~/
+
+- name: Add Tmux Config
+  copy: 
+    src: ./configs/.tmux.conf
+    dest: ~/
+
+- name: Add Ctags
+  copy: 
+    src: ./configs/.ctags
+    dest: ~/
