@@ -4,8 +4,14 @@
 - name: Update Default Shell
   shell: chsh -s `which zsh` root
 
+- name: Check if OhMyZSH Already Installed
+  stat: 
+    path: ~/.oh-my-zsh
+  register: oh_my_zsh_exists
+
 - name: Install OhMyZSH
   shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+  when: oh_my_zsh_exists.stat.exists == "false"
 
 - name: Install PowerLevel10K
   ansible.builtin.git:

@@ -17,3 +17,14 @@
   copy: 
     src: ./configs/.ctags
     dest: ~/
+
+- name: Make neovim config file
+  local_action:
+    module: file
+    path: ~/.config/nvim
+    state: directory
+
+- name: Copy vim config for neovim
+  copy:
+    src: ./configs/init.vim
+    dest: ~/.config/nvim/init.vim

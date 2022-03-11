@@ -1,0 +1,19 @@
+# TODO: These commands can be shortened a lot.
+
+- name: Download .NET Core
+  ansible.builtin.shell: wget https://dot.net/v1/dotnet-install.sh
+
+- name: Make Script Executable
+  ansible.builtin.shell: chmod u+x dotnet-install.sh
+
+- name: Install .NET Core
+  ansible.builtin.shell: bash dotnet-install.sh -c Current
+
+- name: Remove Script
+  ansible.builtin.shell: rm dotnet-install.sh
+
+- name: Add to bashrc
+  ansible.builtin.shell: echo 'export PATH="$PATH:$HOME/.dotnet/"' >> ~/.bashrc
+
+- name: Add to zshrc
+  ansible.builtin.shell: echo 'export PATH="$PATH:$HOME/.dotnet/"' >> ~/.zshrc

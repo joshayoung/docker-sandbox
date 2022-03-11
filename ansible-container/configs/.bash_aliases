@@ -4,7 +4,7 @@ export DOCKER_HIDE_LEGACY_COMMANDS=true
 #### #ALIASES ####
 theos=uname
 alias vi=vim
-# alias vim=nvim
+alias vim=nvim
 export EDITOR=vi
 export HISTSIZE=1000
 
@@ -48,7 +48,7 @@ alias stats="git diff --stat"
 alias cb='git branch | grep "*"'
 alias cleanbranches="git branch | sed -e 's/^[ ]*//' | grep -ivE '^\* master|^master$|^\* main|^main$' | xargs git branch -d"
 
-# alias drestore=`dotnet restore --interactive $1`
+alias drestore=`dotnet restore --interactive $1`
 
 #### Programming ####
 alias be='bundle exec'

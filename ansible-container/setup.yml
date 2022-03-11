@@ -9,6 +9,8 @@
   tasks:
     - name: Install Packages
       include_tasks: tasks/packages.yml
+    - name: Install .NET
+      include_tasks: tasks/dotnet.yml
     - name: Setup ZSH
       include_tasks: tasks/zsh.yml
     - name: Install ASDF

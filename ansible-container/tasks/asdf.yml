@@ -1,5 +1,11 @@
+- name: Check if asdf Already Installed
+  stat: 
+    path: ~/.asdf
+  register: asdf_exists
+
 - name: Install asdf
   shell: git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
+  when: asdf_exists.stat.exists == "false"
 
 # TODO: Combine the 'lineinfile' changes below into one ansible command.
 
@@ -26,10 +32,12 @@
 # TODO: How do I source the new .bashrc or .zshrc before running these commands so I do not have to use the full path?
 - name: Install the Ruby Plugin
   shell: ~/.asdf/bin/asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+  ignore_errors: yes
 
 # TODO: How do I source the new .bashrc or .zshrc before running these commands so I do not have to use the full path?
 - name: Install the Node Plugin
   shell: ~/.asdf/bin/asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  ignore_errors: yes
 
 # TODO: Install the latest version of Node.
 
