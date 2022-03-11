@@ -2,7 +2,7 @@
   # Update this email address:
   shell: git config --global user.email "youremail@example.com"
 - name: Copy Git Global Ignore File
-  shell: git config --global core.excludesfile $HOME/.global_gitignore
+  shell: git config --global core.excludesfile ~/.global_gitignore
 
 - name: Copy .git_aliases file 
   copy: 

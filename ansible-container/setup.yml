@@ -9,8 +9,12 @@
   tasks:
     - name: Install Packages
       include_tasks: tasks/packages.yml
+    - name: Add User
+      include_tasks: tasks/add_user.yml
     - name: Install VS Code
       include_tasks: tasks/vscode.yml
+    - name: Install VS Code Extensions
+      include_tasks: tasks/vscode_extensions.yml
     - name: Install .NET
       include_tasks: tasks/dotnet.yml
     - name: Setup ZSH

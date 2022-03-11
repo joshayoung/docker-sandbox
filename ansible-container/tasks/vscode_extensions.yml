@@ -1,0 +1,13 @@
+- name: Install Needed Packages
+  apt:
+    pkg: 
+      - libxshmfence1 
+      - libglu1
+
+- name: "Add VS extensions"
+  become: yes
+  # TODO: This installs the .vscode extensions for the test user (consider running everything under the test user)
+  become_user: test
+  command: "code --install-extension '{{ item.publisher }}'.'{{ item.name }}'"
+  loop:
+        - { name: 'autoimport', publisher: steoates }

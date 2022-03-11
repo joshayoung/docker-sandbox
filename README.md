@@ -16,6 +16,8 @@
   * https://github.com/sickcodes/Docker-OSX#initial-setup
 * universal-ctags:
   * Cannot be installed via snap in docker for testing, since snap does not seem work within docker.
+* For MacOS the `ansible_os_family` is equal to `Darwin`.
 
 #### Resources:
 * https://www.talkingquickly.co.uk/2021/01/macos-setup-with-ansible/
+* https://www.handsonarchitect.com/2017/07/setup-macbook-almost-at-speed-of-light.html
