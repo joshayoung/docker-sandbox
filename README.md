@@ -16,3 +16,6 @@
   * https://github.com/sickcodes/Docker-OSX#initial-setup
 * universal-ctags:
   * Cannot be installed via snap in docker for testing, since snap does not seem work within docker.
+
+#### Resources:
+* https://www.talkingquickly.co.uk/2021/01/macos-setup-with-ansible/
